@@ -1,0 +1,107 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col s3">
+      <ul id="slide-out" class="side-nav fixed">
+      <div id="blahh">
+        <img id="sideBarPic" ng-src={{userphoto}}>
+        <text id="sideBarName"><b>{{username}}</b></text>
+      </div>
+        <div id="line"></div>
+        <li><a href="#!">My profile</a></li>    
+        <li><a href="/#/general">General</a></li>
+        <li><a href='/#/resources'>Resources</a></li>
+        <li><a href="/#/events">Events</a></li>
+        <li><a href="/#/jobs">Jobs</a></li>
+        <li><a href="/#/lectures">Lectures</a></li>
+        <li><a href="/#/search">Search</a></li>
+        <li><a href="#/">Logout</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"></a>
+		</div>
+
+		<div class="col s9">
+			<h1>Hack Overflow</h1>
+			<div class='HackOverPost'>
+				<form ng-submit="postQue()" id='submit'>
+				<textarea ng-model='question' id="textarea" placeholder="Please Post Your Question"></textarea>
+				<button>Question</button>
+				</form>
+			</div>
+			<ul class="collapsible" data-collapsible="accordion">
+				<li  ng-repeat="message in data.msgs">   
+
+				<!--   id="licollapse" -->
+				<div class="collapsible-header"  ng-class-odd="'odd'"  ng-class-even="'even'"><i class="fa fa-expand" aria-hidden="true"></i>
+				<div class='image'>
+				<img class='resize' ng-src={{message.photolink}}>   
+				</div>
+				<div class='namedate'>
+				<p class='name'>{{message.firstName}} {{message.lastName}}</p> 
+				<p>{{(filtered = (data.anscount|filter:{qid:message.id})).length}} Answers</p>
+				<p class='bdbdbd grey-text text-lighten-1' id='datetime'><span title="{{message.created_at | amDateFormat: 'MMMM Do YYYY, h:mm a' }}">{{message.created_at | amCalendar:referenceTime:formats}}</span></p>
+				</div>
+
+				<div class='postedmsgs'>
+				<p>{{message.Content}}</p>
+
+				</div>
+				<div class='msgImg' ng-show='message.msgImageUrl'>
+				<img class='showImg' ng-src={{message.msgImageUrl}}>
+				</div>
+
+				</div>
+
+
+				<div class="collapsible-body" >
+				<div ng-repeat='answers in data.answers'> 
+				<span ng-if="message.id === answers.qid "> 
+				<div class='card' ng-class-odd="'aodd'"  ng-class-even="'aeven'">
+				<div class='topcmtwrap'>
+				<div class='cmtimage'>
+				<img class='resize' ng-src={{answers.photolink}}> 
+				<div class ="namecontent">
+				<p class='cmtname'>{{answers.firstName}} {{answers.lastName}}</p>
+				<p class='cmtcont'> {{answers.Answer}}</p>
+				<p class='bdbdbd grey-text text-lighten-1' id='datetime'>
+				<span title="{{answers.created_at | amDateFormat: 'MMMM Do YYYY, h:mm a' }}">{{answers.created_at | amCalendar:referenceTime:formats}}
+				</span></p>
+
+				</div> 
+				</div>
+				</div>
+
+				<div class='cmtlikes'> 
+				<span ng-init="status=false"  ng-click="status =!status; addLike(status, answers.id, answers.likes)">
+				<span id= {{answers.id}}><i class="fa fa-thumbs-up"></i> Like </span> 
+				</span>
+				{{answers.likes}}
+				</div>
+				</span> 
+				</div>
+				</div> 
+				<div class ="textbox">  
+				<textarea ng-model="txtcomment" placeholder="Please Add Your ANswer" style='width:680px'></textarea>
+				<button ng-click=postAnswer(message.id,txtcomment);> Answer</button>
+				</div>
+
+
+
+
+				</li>
+					<script>            
+					$(document).ready(function() {
+					$('.collapsible').collapsible({
+					accordion: true 
+					});
+					});
+					</script>
+				</ul> 
+			
+		</div>
+	</div>
+</div>
+
+
+
+

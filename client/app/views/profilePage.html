@@ -1,0 +1,102 @@
+
+<div class="profile-background">
+	<div class="profile-container">
+		
+		<div class="row">
+			
+			<div class="col s4">
+				<img class="profilePic" ng-src={{user.photo}}></img>
+			</div>
+			<div class="col s1"></div>
+			<div class="col s5">
+				<h3 class=".profileName">{{user.name}}</h3>
+				<div class='profileEmail admin'>
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+					{{user.email}}
+				</div>
+				<div class="profileEmployer admin"><i class="fa fa-money" aria-hidden="true"></i><span class="admin-data">Big Company, Inc.</span></div>
+				<div class="profileLocation admin"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="admin-data">Austin, TX</span></div>
+				<div class="profileCohort admin"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="admin-data">
+	MKS 47</span></div>
+				<div class="profileGithub admin"><i class="fa fa-github" aria-hidden="true"></i><span class="admin-data">user24</span></div>
+			</div>
+		
+		</div>
+		<hr>
+		<div class="row">
+			<h5> About </h2>
+			<p editable-text="user.about">{{user.about}}</p>
+		</div>
+		<hr>
+		<div class="row">
+			<h5>Stack</h5>
+	<!-- 		<ul> 
+				<li editable-text="user.stack1">{{user.stack1}}</li>
+				<li editable-text="user.stack2">{{user.stack2}}</li>
+				<li editable-text="user.stack3">{{user.stack3}}</li>
+				<li editable-text="user.stack4">{{user.stack4}}</li>
+			</ul> -->
+			<img src="https://s17.postimg.org/og0231drj/tech_stack.png" class="text-stack-img">
+	</div>
+		<hr>
+
+		<div class="row">
+			
+
+			<div class="col s4 center">
+
+
+	      <ul class="collection with-header">
+	        <li class="collection-header"><h5 >Hobbies</h4></li>
+	        <li class="collection-item" editable-text="user.hobby1">{{user.hobby1}}</li>
+	        <li class="collection-item" editable-text="user.hobby2">{{user.hobby2}}</li>
+	        <li class="collection-item" editable-text="user.hobby3">{{user.hobby3}}</li>
+	        <li class="collection-item" editable-text="user.hobby3">{{user.hobby3}}</li>
+	      </ul>       
+	   	</div>
+
+			<div class="col s4 center">
+	      <ul class="collection with-header">
+	        <li class="collection-header"><h5 >Flicks</h4></li>
+	        <li class="collection-item" editable-text="user.flick1">{{user.flick1}}</li>
+	        <li class="collection-item" editable-text="user.flick2">{{user.flick2}}</li>
+	        <li class="collection-item" editable-text="user.flick3">{{user.flick3}}</li>
+	        <li class="collection-item" editable-text="user.flick4">{{user.flick4}}</li>
+	      </ul>       
+	   	</div>
+
+			<div class="col s4 center">
+	      <ul class="collection with-header">
+	        <li class="collection-header"><h5>Reads</h4></li>
+	        <li class="collection-item" editable-text="user.read1">{{user.read1}}</li>
+	        <li class="collection-item" editable-text="user.read2">{{user.read2}}</li>
+	        <li class="collection-item" editable-text="user.read3">{{user.read3}}</li>
+	        <li class="collection-item" editable-text="user.read4">{{user.read4}}</li>
+	      </ul>       
+	   	</div>
+
+		</div>
+	</div>
+</div>
+
+		<div id="sideBar">
+			<ul id="slide-out" class="side-nav fixed">
+			<div id="blahh">
+				<img id="sideBarPic" ng-src={{user.photo}}>
+				<text id="sideBarName"><b>{{username}}</b></text>
+			</div>
+				<div id="line"></div>
+				<li><a href="/#/profile">My profile</a></li>		
+	      <li><a href="/#/overflow">Hack Overflow</a></li>
+	      <li><a href='/#/resources'>Resources</a></li>
+	      <li><a href="/#/events">Events</a></li>
+	      <li><a href="/#/jobs">Jobs</a></li>
+	      <li><a href="#">Logout</a></li>
+	    </ul>
+	    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+		</div>
+
+
+
+
+
