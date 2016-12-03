@@ -18,7 +18,7 @@ angular.module('reactorlounge', [
         templateUrl: '../app/views/loginPage.html',
         controller: 'LoginController'
       })
-  	  .when('/profile', {
+  	  .when('/profile/:userId', {
         templateUrl: '../app/views/profilePage.html',
         controller: 'ProfilePageController'
       })

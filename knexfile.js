@@ -6,7 +6,7 @@ module.exports = {
     connection: {
       host: 'localhost',
       user: 'root',
-      password: '',
+      password: 'mks47',
       database: 'reactorlounge'
     }
   }

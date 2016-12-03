@@ -2,13 +2,32 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('user',function (table) {
       table.increments("id").primary();
-      table.string("username",200);
       table.string("firstName",200);
       table.string("lastName",200);
       table.string("email",200);
       table.string("gender",10);
       table.string("photolink",200);
       table.string("facebookID",200);
+      table.string('about', 500);
+      table.string('hobby1', 200);
+      table.string('hobby2', 200);
+      table.string('hobby3', 200);
+      table.string('flick1', 100);
+      table.string('flick2', 100);
+      table.string('flick3', 100);
+      table.string('flick4', 100);
+      table.string('read1', 100);
+      table.string('read2', 100);
+      table.string('read3', 100);
+      table.string('read4', 100);
+      table.string('stack1', 200);
+      table.string('stack2', 200);
+      table.string('stack3', 200);
+      table.string('stack4', 200);
+      table.string('github', 100);
+      table.string('cohort', 100);
+      table.string('city', 100);
+      table.string('company', 100);
 			table.integer('age',3);
   	}).then(function () {
   		console.log("Created User Table")

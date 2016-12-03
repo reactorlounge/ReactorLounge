@@ -106,6 +106,14 @@ angular.module('reactorlounge.services', [])
    		method: "GET",
    		url: '/currentuser'
    	})
+   }, 
+
+   getUser: function(userId){
+    console.log('this is gu userid', userId)
+    return $http({
+      method: "GET", 
+      url: '/user/' + userId
+    })
    }
 
   }
